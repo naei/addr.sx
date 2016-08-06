@@ -1,0 +1,11 @@
+# Disable directory browsing
+Options All -Indexes
+# Error redirections
+ErrorDocument 404 /?404
+# Set default charset
+AddDefaultCharset UTF-8
+# Prevent access to .htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
