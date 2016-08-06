@@ -2,7 +2,7 @@
 /**
  *
  * addr.sx - https://github.com/naei/addr.sx
- * Displays your public IP with a taste of 90's
+ * Displays your public IP address with a taste of 90's
  *
  */
 if(isset($_GET['404'])) {
@@ -10,7 +10,7 @@ if(isset($_GET['404'])) {
   $err1 = "404 Not Found";
   $err2 = "The requested URL does not exist";
 } else {
-  // get user's public IP
+  // get user's public IP address
   $ip = getenv('HTTP_CLIENT_IP')?:
         getenv('HTTP_X_FORWARDED_FOR')?:
         getenv('HTTP_X_FORWARDED')?:

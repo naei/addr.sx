@@ -1,6 +1,6 @@
 ## addr.sx
 
-Displays your public IP with a taste of 90's.
+Displays your public address IP with a taste of 90's.
 
 ### Usage
 
