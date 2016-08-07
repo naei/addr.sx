@@ -35,7 +35,7 @@ if(isset($_GET['404'])) {
   <head>
     <meta charset="UTF-8">
     <title>addr.sx</title>
-    <meta name="description" content="Displays your public IP with a taste of 90's">
+    <meta name="description" content="Displays your public IP address with a taste of 90's">
     <link rel="icon" href="./addr.sx.ico">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
