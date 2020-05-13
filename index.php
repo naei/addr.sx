@@ -33,6 +33,14 @@ if(isset($_GET['404'])) {
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11095228-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-11095228-7');
+    </script>
     <meta charset="UTF-8">
     <title>addr.sx</title>
     <meta name="description" content="Displays your public IP address with a taste of 90's">
