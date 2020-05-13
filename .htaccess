@@ -4,6 +4,9 @@ Options All -Indexes
 ErrorDocument 404 /?404
 # Set default charset
 AddDefaultCharset UTF-8
+# Redirect to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # Prevent access to .htaccess
 <Files .htaccess>
 order allow,deny

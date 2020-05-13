@@ -74,7 +74,7 @@ if(isset($_GET['404'])) {
       footer>div {
         color: #999;
         font-size: 12px;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 5px;
       }
