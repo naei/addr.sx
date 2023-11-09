@@ -17,6 +17,9 @@ if(isset($_GET['404'])) {
         getenv('HTTP_FORWARDED_FOR')?:
         getenv('HTTP_FORWARDED')?:
         getenv('REMOTE_ADDR');
+  if (strlen($ip) > 15) {
+    $ip = substr($ip, 0, 20) . '<br>' . substr($ip, 20);
+  }
   // get the current subdomain 
   $sub = array_shift((explode(".",$_SERVER['HTTP_HOST'])));
   // get the current user agent
@@ -69,97 +72,30 @@ if(isset($_GET['404'])) {
         background-position: left bottom;
         position: absolute;
         bottom: 0;
-        left: 0;
       }
       footer>div {
         color: #999;
         font-size: 12px;
         position: absolute;
         bottom: 0;
-        left: 5px;
+        left: 10px;
+        padding-bottom: 5px;
       }
       footer>div>a {
         color: #999;
-      }
-      /* modal */
-      .modal {
-        position: fixed;
-        background-color: rgba(0, 0, 0, 0.4);
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 999;
-        opacity: 0;
-        pointer-events: none;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        transition: all 0.3s;
-      }
-      .modal:target {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .modal>div {
-        width: 400px;
-        max-width: 86%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        color: #ffffff;
-        background: #031428;
-        font-size: 12px;
-        text-align: center;
-        border: 2px solid #0e3849;
-      }
-      .modal img {
-        padding: 13px;
-        width: 150px;
-      }
-      .modal header {
-        font-weight: bold;
-      }
-      .modal-close {
-        color: #aaa;
-        line-height: 30px;
-        font-size: 16px;
-        font-weight: bold;
-        position: absolute;
-        right: 10px;
-        text-align: right;
-        top: 0;
-        width: 70px;
-        text-decoration: none;
-      }
-      .modal-close:hover {
-        color: #000;
       }
     </style>
   </head>
   <body>
     <main>
-        <h1><?= $err1?:$ip ?></h1>
-        <h2><?= $err2?:$host ?></h2>
+        <h1><?= isset($err1) ? $err1 : $ip ?></h1>
+        <h2><?= isset($err2) ? $err2 : $host ?></h2>
     </main>
-    <div id="donate-modal" class="modal">
-      <div>
-        <a href="#" class="modal-close">×</a>
-        <div>
-            <br>
-            Thank you for using this website!<br>
-            If you like this project, feel free to donate. :)<br>
-            <img src="./donate-btc-qr.png"><br>
-            BTC address: bc1qef67tx0jx6fhg2dp2y62mqkyq6lhusz68vgk24
-        </div>
-      </div>
-    </div>
     <footer>
         <div>
-          Copyright © 2016-2020 <a href="https://github.com/naei/addr.sx" target="_blank">addr.sx</a> &nbsp;|&nbsp; <a class="donate" href="#donate-modal">Thank you for your support.</a>
+          © 2016-2023 <a href="https://github.com/naei/addr.sx" target="_blank">addr.sx</a>
         </div>
     </footer>
   </body>
-  <!-- Copyright © 2016-2020 https://github.com/naei/addr.sx -->
+  <!-- Copyright © 2016-2023 https://github.com/naei/addr.sx -->
 </html>
