@@ -33,19 +33,9 @@
                 });
             }
         }
-
         function getQueryStringValue(key) {
             return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
         }
-
-        window.onload = function() {
-            console.log(getQueryStringValue("qr"));
-            var textFromUrl = getQueryStringValue("qr");
-            if (textFromUrl) {
-                document.getElementById('input').value = textFromUrl;
-                generateQRCode();
-            }
-        };
     </script>
 </body>
 <!-- Copyright © 2016-2024 https://github.com/naei/addr.sx -->
