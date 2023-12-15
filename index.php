@@ -48,43 +48,7 @@ if(isset($_GET['404'])) {
     <title>addr.sx</title>
     <meta name="description" content="Displays your public IP address with a taste of 90's">
     <link rel="icon" href="./addr.sx.ico">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
-      html, body { 
-        margin: 0;
-        background-color:#000020;
-      }
-      main {
-        color: #E3CEAB;
-        font-family: 'Press Start 2P', monospace;
-        text-align: center;
-        margin-top: 12%;
-      }
-      h1, h2 { font-weight:normal; }
-      h1 { font-size: 36px; }
-      h2 { font-size: 13px; }
-      footer {
-        width: 100%;
-        height: 30%;
-        background-image: url('./sor-city.gif');
-        background-size: contain;
-        background-repeat: repeat-x;
-        background-position: left bottom;
-        position: absolute;
-        bottom: 0;
-      }
-      footer>div {
-        color: #999;
-        font-size: 12px;
-        position: absolute;
-        bottom: 0;
-        left: 10px;
-        padding-bottom: 5px;
-      }
-      footer>div>a {
-        color: #999;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <main>
@@ -93,9 +57,9 @@ if(isset($_GET['404'])) {
     </main>
     <footer>
         <div>
-          © 2016-2023 <a href="https://github.com/naei/addr.sx" target="_blank">addr.sx</a>
+          © 2016-2024 <a href="https://github.com/naei/addr.sx" target="_blank">addr.sx</a>
         </div>
     </footer>
   </body>
-  <!-- Copyright © 2016-2023 https://github.com/naei/addr.sx -->
+  <!-- Copyright © 2016-2024 https://github.com/naei/addr.sx -->
 </html>

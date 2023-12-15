@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>addr.sx/qr</title>
+    <meta name="description" content="Convert some text to QR code with a taste of 90's">
+    <link rel="icon" href="../addr.sx.ico">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main>
+        <textarea id="input" placeholder="Some text to convert..." maxlength="7089" oninput="generateQRCode()"></textarea>
+        <div id="qrcode"></div>
+    </main>
+    <footer>
+        <div>
+          © 2016-2024 <a href="https://github.com/naei/addr.sx" target="_blank">addr.sx</a> //////// <b><a href="https://addr.sx">HOMEPAGE</a> > QR</b>
+        </div>
+    </footer>
+
+    <script src="./lib/qrcode-1.5.1.js"></script> <!-- https://github.com/soldair/node-qrcode -->
+    <script>
+        function generateQRCode() {
+            var text = document.getElementById('input').value;
+            if (text) {
+                QRCode.toCanvas(document.createElement('canvas'), text, {
+                    width: 300,
+                    height: 300
+                }, function (error, canvas) {
+                    if (error) console.error(error);
+                    var qrCodeContainer = document.getElementById('qrcode');
+                    qrCodeContainer.innerHTML = '';
+                    qrCodeContainer.appendChild(canvas);
+                });
+            }
+        }
+
+        function getQueryStringValue(key) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+        }
+
+        window.onload = function() {
+            console.log(getQueryStringValue("qr"));
+            var textFromUrl = getQueryStringValue("qr");
+            if (textFromUrl) {
+                document.getElementById('input').value = textFromUrl;
+                generateQRCode();
+            }
+        };
+    </script>
+</body>
+<!-- Copyright © 2016-2024 https://github.com/naei/addr.sx -->
+</html>
